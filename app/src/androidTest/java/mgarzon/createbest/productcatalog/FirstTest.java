@@ -4,6 +4,8 @@ package mgarzon.createbest.productcatalog;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.view.View;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -15,6 +17,8 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.anything;
@@ -47,10 +51,14 @@ import static org.hamcrest.CoreMatchers.anything;
 
             onView(withId(R.id.addButton)).perform(click());
 
-            // Check that the text was changed.
+             //Check that the text was changed.
             //onView(withId(R.id.listViewProducts))
               //      .check(matches(withText(mStringToBetyped)));
-            onData(anything()).inAdapterView(withId(R.id.listViewProducts)).atPosition(0).onChildView(withId(R.id.textViewName)).check(matches(withText("Hello")));
+
+            //onView(withId(R.id.listViewProducts)).check(matches(isCompletelyDisplayed()));
+            //onData(anything()).inAdapterView(withId(R.id.listViewProducts)).atPosition(0).onChildView(withId(R.id.textViewName)).check(matches(withContentDescription(mStringToBetyped)));
+            onData(anything()).inAdapterView(withId(R.id.listViewProducts)).atPosition(0).onChildView(withId(R.id.textViewName)).check(matches(withText("Espresso")));
+
 
         }
     }
