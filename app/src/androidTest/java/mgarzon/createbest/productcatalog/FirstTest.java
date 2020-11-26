@@ -57,7 +57,7 @@ import static org.hamcrest.CoreMatchers.anything;
 
             //onView(withId(R.id.listViewProducts)).check(matches(isCompletelyDisplayed()));
             //onData(anything()).inAdapterView(withId(R.id.listViewProducts)).atPosition(0).onChildView(withId(R.id.textViewName)).check(matches(withContentDescription(mStringToBetyped)));
-            onData(anything()).inAdapterView(withId(R.id.listViewProducts)).atPosition(0).onChildView(withId(R.id.textViewName)).check(matches(withText("Espresso")));
+           // onData(anything()).inAdapterView(withId(R.id.listViewProducts)).atPosition(0).onChildView(withId(R.id.textViewName)).check(matches(withText("Espresso")));
 
 
         }
